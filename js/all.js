@@ -21,7 +21,7 @@ function inputTask(e) {
 // 從陣列中刪除點擊的工作內容及更新陣列，並同步更新localstorage的內容
 function deleteTask(e) {
   if (e.target.nodeName == "I") {
-    var deleteTask = e.target.dataset.num;
+    let deleteTask = e.target.dataset.num;
     taskList.splice(deleteTask, 1);
     localStorage.setItem('storagedTask', JSON.stringify(taskList));
     showTask();
@@ -31,7 +31,7 @@ function deleteTask(e) {
 // 把當前的陣列內容，顯示於指定的ul元素
 function showTask() {
   let len = taskList.length;
-  var str = "";
+  let str = "";
   for (let i = 0; i < len; i++) {
       str +=  '<li><i class="fas fa-minus-circle awsomeIcon" data-num="'+ i +'"></i></a>\xa0\xa0' + taskList[i] + '</li>';
       }
